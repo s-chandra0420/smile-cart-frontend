@@ -1,3 +1,6 @@
+import Carousel from "./Carousel";
+import { IMAGE_URLS } from "./constants";
+
 const Product = () => (
     <div className="px-6 pb-6">
         <div>
@@ -6,11 +9,7 @@ const Product = () => (
         </div>
         <div className="flex gap-4 mt-6">
             <div className="w-2/5">
-                <img
-                    alt="Product"
-                    src="https://ik.imagekit.io/d9mvewbju/SmileCart/thumbnail_61_7PaLfb.jpg"
-                    className="w-10/12 h-64"
-                />
+                <Carousel title="Infinix Inbook" imageUrls={IMAGE_URLS} />
             </div>
             <div className="w-3/5 space-y-4">
                 <p>
