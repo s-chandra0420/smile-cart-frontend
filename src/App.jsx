@@ -1,11 +1,15 @@
+import { Route, Switch, Redirect } from "react-router-dom";
+import ProductList from "./components/ProductList";
 import Product from "./components/Product";
-import "./App.css";
-// eslint-disable-next-line import/extensions
-import logo from "./logo.svg";
-import React from "react";
+import PageNotFound from "./components/PageNotFound";
 
-import { Button } from "neetoui";
-
-const App = () => <Product />;
+const App = () => (
+    <Switch>
+        <Route exact component={ProductList} path="/products" />
+        <Route exact component={Product} path="/products/:slug" />
+        <Redirect exact from="/" to="/products" />
+        <Route component={PageNotFound} path="*" />
+    </Switch>
+);
 
 export default App;
